@@ -1,12 +1,9 @@
 
+i {
+color: white;
+padding: 10px;
 
-
-
-
-
-
-
-
+}
 
 .navlogo{
 height: 50px;
@@ -59,15 +56,6 @@ padding-left: 5px;
 padding-top: 5px;
 padding-bottom: 10px;
 padding-right: 5px;
-}
-
-.footer{
-background-color: black;
-
-}
-.footer ul li{
-color: aliceblue;
-
 }
 
 .txtclo{
@@ -184,4 +172,56 @@ margin-right: 200px;
     text-decoration: double;
   }
 
-  
+  /* Footer */
+
+  .footer {
+  --heading-font: var(--default-font);
+  color: var(--default-color);
+  background-color: brown;
+  font-size: 14px;
+  color: white;
+ 
+  padding: 40px 0;
+  position: relative;
+}
+
+
+.footer h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer .address p {
+  margin-bottom: 0px;
+}
+
+.footer .copyright {
+  padding-top: 20px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
+.footer .credits {
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
