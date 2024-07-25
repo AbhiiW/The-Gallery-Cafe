@@ -330,6 +330,18 @@ p.mb-4 {
 }
 
 
+/* Registration Form */
 
+.gradient-custom-3 {
+  background: #a52a2a;
+  background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+  background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+  }
+  
+  .gradient-custom-4 {
+  background: #a52a2a;
+  background: -webkit-linear-gradient(to right, rgb(208, 218, 68), rgb(216, 233, 123));
+  background: linear-gradient(to right,#a52a2a, rgb(221, 219, 86))
+  }
 
 
