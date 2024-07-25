@@ -122,7 +122,7 @@ body {
   .footer {
   --heading-font: var(--default-font);
   color: var(--default-color);
-  background-color: brown;
+  background-color: #a52a2a;
   font-size: 14px;
   color: white;
  
@@ -170,3 +170,4 @@ height: calc(100% - 73px);
 height: 100%;
 }
 }
+
