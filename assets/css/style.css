@@ -5,7 +5,7 @@ body {
 }
 
 .header {
-  background-color: #C40404; 
+  background-color: #C40404;
   padding: 10px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
@@ -14,7 +14,9 @@ body {
   z-index: 1000;
 }
 
-.header a, .header form, .header button {
+.header a,
+.header form,
+.header button {
   transition: all 0.3s ease;
 }
 
@@ -56,11 +58,11 @@ body {
 
 /* Submenu Styles */
 .submenudirect-wrapper {
-  background-color: #f8f9fa; 
+  background-color: #f8f9fa;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 0;
-  position: fixed; 
-  top: 90px; 
+  position: fixed;
+  top: 90px;
   width: 100%;
   z-index: 999;
 }
@@ -87,7 +89,8 @@ body {
   transition: all 0.3s ease;
 }
 
-.submenudirect .nav-pills .nav-link:hover, .submenudirect .nav-pills .nav-link.active {
+.submenudirect .nav-pills .nav-link:hover,
+.submenudirect .nav-pills .nav-link.active {
   background-color: #C40404;
   color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -231,7 +234,7 @@ p.mb-4 {
 }
 
 
-  /* Footer */
+/* Footer */
 .footer {
   --heading-font: var(--default-font);
   color: var(--default-color);
@@ -305,6 +308,7 @@ p.mb-4 {
   .footer .icon {
     font-size: 20px;
   }
+
   .footer .social-links a {
     width: 35px;
     height: 35px;
@@ -336,12 +340,207 @@ p.mb-4 {
   background: #a52a2a;
   background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
   background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
-  }
-  
-  .gradient-custom-4 {
+}
+
+.gradient-custom-4 {
   background: #a52a2a;
   background: -webkit-linear-gradient(to right, rgb(208, 218, 68), rgb(216, 233, 123));
-  background: linear-gradient(to right,#a52a2a, rgb(221, 219, 86))
+  background: linear-gradient(to right, #a52a2a, rgb(221, 219, 86))
+}
+
+
+
+/* About */
+
+.about{
+  margin-top: 100px;
+}
+
+.abuthead {
+
+color:#a52a2a ;
+
+
+}
+
+/* Book A Table Section*/
+
+.bookingtitle {
+  margin-top: 200px;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #C40404;
+  font-weight: bold;
+
+}
+
+.bookingtitle {
+  margin-top: 200px;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #C40404;
+  font-weight: bold;
+
+}
+
+.bookbutton {
+  color: #ffffff;
+ background-color: #C40404;
+  
+}
+
+
+.book-a-table .reservation-img {
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+}
+
+.book-a-table .reservation-form-bg {
+  background: color-mix(in srgb, var(--default-color), transparent 97%);
+}
+
+.book-a-table .php-email-form {
+  padding: 30px;
+}
+
+@media (max-width: 575px) {
+  .book-a-table .php-email-form {
+    padding: 20px;
   }
+}
+
+.book-a-table .php-email-form button[type=submit] {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: 0;
+  padding: 14px 60px;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.book-a-table .php-email-form button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
 
 
+/* Gallery  */
+.gallery {
+  padding-bottom: 0;
+}
+
+.gallery .gallery-item {
+  overflow: hidden;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+
+.gallery .gallery-item img {
+  transition: all ease-in-out 0.4s;
+}
+
+.gallery .gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Events Section */
+
+.eventmain{
+margin-top:400px;
+
+}
+.events {
+  background: url(../Photo/333.png) center center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.events::before {
+  content: "";
+  background-color: rgba(10, 10, 10, 0.8);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.events .section-title h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #faf5f5;
+  text-align: center;
+}
+
+
+.events .container {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .events {
+    background-attachment: fixed;
+  }
+}
+
+.events .events-carousel {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px;
+}
+
+.events .event-item {
+  color: #fff;
+}
+
+.events .event-item h3 {
+  font-weight: 600;
+  font-size: 26px;
+  color: #C40404;
+}
+
+.events .event-item .price {
+  font-size: 26px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.events .event-item .price span {
+  border-bottom: 2px solid #C40404;
+}
+
+.events .event-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.events .event-item ul li {
+  padding-bottom: 10px;
+}
+
+.events .event-item ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #C40404;
+}
+
+.events .event-item p:last-child {
+  margin-bottom: 0;
+}
+
+.events .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.events .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+
+.events .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #faf3f3;
+}
