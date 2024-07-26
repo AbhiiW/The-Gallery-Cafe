@@ -68,7 +68,20 @@
 
                         <h3 class="mb-5">Sign in</h3>
 
-                        <form method="POST" action="login.php">
+                        <?php
+                        session_start();
+                        if (isset($_SESSION['success_message'])) {
+                            echo '<div class="alert alert-success">' . $_SESSION['success_message'] . '</div>';
+                            echo '<input type="hidden" id="redirectUrl" value="../index.html">';
+                            unset($_SESSION['success_message']);
+                        }
+                        if (isset($_SESSION['error_message'])) {
+                            echo '<div class="alert alert-danger">' . $_SESSION['error_message'] . '</div>';
+                            unset($_SESSION['error_message']);
+                        }
+                        ?>
+
+                        <form method="POST" action="../assets/php/login.php">
                             <div data-mdb-input-init class="form-outline mb-4">
                                 <input type="email" id="typeEmailX-2" class="form-control form-control-lg" name="email" required />
                                 <label class="form-label" for="typeEmailX-2">Email</label>
@@ -165,6 +178,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
+    <script src="../assets/js/redirect.js"></script>
 </body>
 
 </html>

@@ -51,7 +51,6 @@
   <!-- Hero Section -->
 
   <!-- Signupform -->
-
   <section class="vh-100 signupform">
     <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -63,8 +62,20 @@
 
                                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
-                                <form class="mx-1 mx-md-4" method="POST" action="register.php">
+                                <?php
+                                session_start();
+                                if (isset($_SESSION['success_message'])) {
+                                    echo '<div class="alert alert-success">' . $_SESSION['success_message'] . '</div>';
+                                    echo '<input type="hidden" id="redirectUrl" value="login.php">';
+                                    unset($_SESSION['success_message']);
+                                }
+                                if (isset($_SESSION['error_message'])) {
+                                    echo '<div class="alert alert-danger">' . $_SESSION['error_message'] . '</div>';
+                                    unset($_SESSION['error_message']);
+                                }
+                                ?>
 
+                                <form class="mx-1 mx-md-4" method="POST" action="../assets/php/register.php">
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div data-mdb-input-init class="form-outline flex-fill mb-0">
@@ -107,15 +118,11 @@
                                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                         <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg">Register</button>
                                     </div>
-
                                 </form>
 
                             </div>
                             <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                                    class="img-fluid" alt="Sample image">
-
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid" alt="Sample image">
                             </div>
                         </div>
                     </div>
@@ -124,6 +131,7 @@
         </div>
     </div>
 </section>
+
 
   <!-- Footer -->
   <footer id="footer" class="footer dark-background">
@@ -178,5 +186,6 @@
     </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="../assets/js/redirect.js"></script>
 </body>
 </html>
