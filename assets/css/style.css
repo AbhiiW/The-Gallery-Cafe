@@ -544,3 +544,20 @@ margin-top:400px;
 .events .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #faf3f3;
 }
+
+/* Signin Form */
+.signinform{
+  background-color: #ffffff;
+  margin-top: 200px;
+  margin-bottom: 200px;
+
+}
+
+/* Signupform */
+
+.signupform{
+background-color:#C40404;
+margin-top: 180px;
+
+
+}
