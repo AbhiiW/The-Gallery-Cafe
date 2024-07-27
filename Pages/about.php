@@ -188,90 +188,50 @@
 
 </section>
 
-
-
- <!--  Gallery Section  -->
- <section id="gallery" class="gallery">
+<!-- Gallery Section -->
+<section id="gallery" class="gallery">
   <div class="container-fluid">
-
     <div class="section-title">
       <h2>Some photos from <span>Our Restaurant</span></h2>
       <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
     </div>
 
     <div class="row g-0">
+      <?php
+      $servername = "localhost";
+      $username = "root";
+      $password = "";
+      $dbname = "gallery_db";
 
-      <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-          <a href="assets/img/gallery/gallery-1.jpg" class="gallery-lightbox">
-            <img src="../assets/Photo/22.jpg" alt="" class="img-fluid">
-          </a>
-        </div>
-      </div>
+      // Create connection
+      $conn = new mysqli($servername, $username, $password, $dbname);
 
-      <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-          <a href="assets/img/gallery/gallery-2.jpg" class="gallery-lightbox">
-            <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
-          </a>
-        </div>
-      </div>
+      // Check connection
+      if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+      }
 
-      <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-          <a href="assets/img/gallery/gallery-3.jpg" class="gallery-lightbox">
-            <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
-          </a>
-        </div>
-      </div>
+      $sql = "SELECT image_path FROM gallery_images";
+      $result = $conn->query($sql);
 
-      <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-          <a href="assets/img/gallery/gallery-4.jpg" class="gallery-lightbox">
-            <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
-          </a>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-          <a href="assets/img/gallery/gallery-5.jpg" class="gallery-lightbox">
-            <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
-          </a>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-          <a href="assets/img/gallery/gallery-6.jpg" class="gallery-lightbox">
-            <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
-          </a>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-          <a href="assets/img/gallery/gallery-7.jpg" class="gallery-lightbox">
-            <img src="assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
-          </a>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-          <a href="assets/img/gallery/gallery-8.jpg" class="gallery-lightbox">
-            <img src="assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
-          </a>
-        </div>
-      </div>
-
+      if ($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()) {
+              echo '<div class="col-lg-3 col-md-4">
+                      <div class="gallery-item">
+                        <a href="' . $row["image_path"] . '" class="gallery-lightbox">
+                          <img src="' . $row["image_path"] . '" alt="" class="img-fluid">
+                        </a>
+                      </div>
+                    </div>';
+          }
+      } else {
+          echo "0 results";
+      }
+      $conn->close();
+      ?>
     </div>
-
   </div>
 </section><!-- End Gallery Section -->
-
-
-
 
 
 

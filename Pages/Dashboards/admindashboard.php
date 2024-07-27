@@ -104,23 +104,24 @@
             </div>
           </div>
 
-          <!--  Updating the gallery -->
-          <div class="col-md-6">
-            <div class="card mb-4 shadow-sm">
-              <div class="card-header">
-                <h4>Update Gallery</h4>
-              </div>
-              <div class="card-body">
-                <form>
-                  <div class="mb-3">
-                    <label for="galleryImage" class="form-label">Upload Image</label>
-                    <input type="file" class="form-control" id="galleryImage" required>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Update Gallery</button>
-                </form>
-              </div>
-            </div>
-          </div>
+         <!-- Updating the gallery -->
+<div class="col-md-6">
+  <div class="card mb-4 shadow-sm">
+    <div class="card-header">
+      <h4>Update Gallery</h4>
+    </div>
+    <div class="card-body">
+      <form method="POST" action="../assets/php/update_gallery.php" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="galleryImage" class="form-label">Upload Image</label>
+          <input type="file" class="form-control" id="galleryImage" name="galleryImage" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Gallery</button>
+      </form>
+    </div>
+  </div>
+</div>
+
 
           <!-- Updating events -->
           <div class="col-md-6">
