@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $row['password'])) {
             $_SESSION['success_message'] = "Login successful. Welcome, " . $row['name'] . "!";
             $_SESSION['login_success'] = true;
-            header("Location: ../../Pages/staffdashboard.php");
+            header("Location: ../../Pages/staffdashboard.html");
             exit();
         } else {
             $_SESSION['error_message'] = "Invalid password.";
@@ -31,6 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conn->close();
-header("Location: ../../Pages/staff_login.php");
+header("Location: ../../Pages/stafflogin.php");
 exit();
 ?>
