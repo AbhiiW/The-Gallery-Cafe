@@ -73,36 +73,37 @@
               </div>
             </div>
           </div>
-
-          <!--  Adding new menu items -->
-          <div class="col-md-6">
-            <div class="card mb-4 shadow-sm">
-              <div class="card-header">
-                <h4>Add New Menu Item</h4>
-              </div>
-              <div class="card-body">
-                <form>
-                  <div class="mb-3">
+ 
+        <!-- Adding new menu items -->
+<div class="col-md-6">
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+            <h4>Add New Menu Item</h4>
+        </div>
+        <div class="card-body">
+            <form action="../../assets/php/Admin_Functions/add_menu_item.php" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
                     <label for="menuItemName" class="form-label">Item Name</label>
-                    <input type="text" class="form-control" id="menuItemName" required>
-                  </div>
-                  <div class="mb-3">
+                    <input type="text" class="form-control" id="menuItemName" name="menuItemName" required>
+                </div>
+                <div class="mb-3">
                     <label for="menuItemPrice" class="form-label">Price</label>
-                    <input type="text" class="form-control" id="menuItemPrice" required>
-                  </div>
-                  <div class="mb-3">
+                    <input type="text" class="form-control" id="menuItemPrice" name="menuItemPrice" required>
+                </div>
+                <div class="mb-3">
                     <label for="menuItemDescription" class="form-label">Description</label>
-                    <textarea class="form-control" id="menuItemDescription" rows="3" required></textarea>
-                  </div>
-                  <div class="mb-3">
+                    <textarea class="form-control" id="menuItemDescription" name="menuItemDescription" rows="3" required></textarea>
+                </div>
+                <div class="mb-3">
                     <label for="menuItemPhoto" class="form-label">Photo</label>
-                    <input type="file" class="form-control" id="menuItemPhoto" required>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Add Menu Item</button>
-                </form>
-              </div>
-            </div>
-          </div>
+                    <input type="file" class="form-control" id="menuItemPhoto" name="menuItemPhoto" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Menu Item</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 
          <!-- Updating the gallery -->
          <div class="col-md-6">
