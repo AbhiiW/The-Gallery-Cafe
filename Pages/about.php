@@ -171,6 +171,7 @@
     </div>
   </section><!-- End Contact Section -->
 
+
 <!-- Gallery  -->
                            
       <div class="swiper-slide" role="group" aria-label="2 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="1"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-2.jpg"><img src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt=""></a></div><div class="swiper-slide" role="group" aria-label="3 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="2"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-3.jpg"><img src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt=""></a></div><div class="swiper-slide" role="group" aria-label="4 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="3"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-4.jpg"><img src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt=""></a></div><div class="swiper-slide" role="group" aria-label="5 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="4"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-5.jpg"><img src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt=""></a></div><div class="swiper-slide" role="group" aria-label="6 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="5"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-6.jpg"><img src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt=""></a></div><div class="swiper-slide swiper-slide-prev" role="group" aria-label="7 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="6"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-7.jpg"><img src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt=""></a></div><div class="swiper-slide swiper-slide-active" role="group" aria-label="8 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="7"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-8.jpg"><img src="assets/img/gallery/gallery-8.jpg" class="img-fluid" alt=""></a></div><div class="swiper-slide swiper-slide-next" role="group" aria-label="1 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="0"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-1.jpg"><img src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt=""></a></div></div>
@@ -181,7 +182,7 @@
 
 </section>
 
-<!-- Gallery Section -->
+
 <section id="gallery" class="gallery">
   <div class="container-fluid">
     <div class="section-title">
@@ -191,20 +192,7 @@
 
     <div class="row g-0">
       <?php
-      $servername = "localhost";
-      $username = "root";
-      $password = "";
-      $dbname = "gallery_db";
-
-      // Create connection
-      $conn = new mysqli($servername, $username, $password, $dbname);
-
-      // Check connection
-
-      
-      if ($conn->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
-      }
+      include '../assets/php/dbconnection.php';
 
       $sql = "SELECT image_path FROM gallery_images";
       $result = $conn->query($sql);
@@ -213,8 +201,8 @@
           while($row = $result->fetch_assoc()) {
               echo '<div class="col-lg-3 col-md-4">
                       <div class="gallery-item">
-                        <a href="' . $row["image_path"] . '" class="gallery-lightbox">
-                          <img src="' . $row["image_path"] . '" alt="" class="img-fluid">
+                        <a href="../assets/Photo/' . $row["image_path"] . '" class="gallery-lightbox">
+                          <img src="../assets/Photo/' . $row["image_path"] . '" alt="" class="img-fluid">
                         </a>
                       </div>
                     </div>';
@@ -222,8 +210,8 @@
       } else {
           echo "0 results";
       }
+
       $conn->close();
-      
       ?>
     </div>
   </div>
