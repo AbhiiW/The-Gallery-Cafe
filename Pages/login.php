@@ -101,12 +101,6 @@
 
                             <hr class="my-4">
 
-                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;" type="button">
-                                <i class="fab fa-google me-2"></i> Sign in with google
-                            </button>
-                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;" type="button">
-                                <i class="fab fa-facebook-f me-2"></i>Sign in with facebook
-                            </button>
                         </form>
 
                     </div>

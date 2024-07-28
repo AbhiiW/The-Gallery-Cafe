@@ -1,0 +1,45 @@
+
+<!-- Gallery  -->
+                           
+<div class="swiper-slide" role="group" aria-label="2 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="1"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-2.jpg"><img src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt=""></a></div><div class="swiper-slide" role="group" aria-label="3 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="2"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-3.jpg"><img src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt=""></a></div><div class="swiper-slide" role="group" aria-label="4 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="3"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-4.jpg"><img src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt=""></a></div><div class="swiper-slide" role="group" aria-label="5 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="4"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-5.jpg"><img src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt=""></a></div><div class="swiper-slide" role="group" aria-label="6 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="5"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-6.jpg"><img src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt=""></a></div><div class="swiper-slide swiper-slide-prev" role="group" aria-label="7 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="6"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-7.jpg"><img src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt=""></a></div><div class="swiper-slide swiper-slide-active" role="group" aria-label="8 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="7"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-8.jpg"><img src="assets/img/gallery/gallery-8.jpg" class="img-fluid" alt=""></a></div><div class="swiper-slide swiper-slide-next" role="group" aria-label="1 / 8" style="width: 218.667px; margin-right: 20px;" data-swiper-slide-index="0"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-1.jpg"><img src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt=""></a></div></div>
+<div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 7"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 8" aria-current="true"></span></div>
+<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+</div>
+
+</section>
+
+
+<section id="gallery" class="gallery">
+<div class="container-fluid">
+<div class="section-title">
+<h2>Some photos from <span>Our Restaurant</span></h2>
+<p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+</div>
+
+<div class="row g-0">
+<?php
+include '../assets/php/dbconnection.php';
+
+$sql = "SELECT image_path FROM gallery_images";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo '<div class="col-lg-3 col-md-4">
+                <div class="gallery-item">
+                  <a href="../assets/Photo/' . $row["image_path"] . '" class="gallery-lightbox">
+                    <img src="../assets/Photo/' . $row["image_path"] . '" alt="" class="img-fluid">
+                  </a>
+                </div>
+              </div>';
+    }
+} else {
+    echo "0 results";
+}
+
+$conn->close();
+?>
+</div>
+</div>
+</section><!-- End Gallery Section -->
