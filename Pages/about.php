@@ -42,12 +42,10 @@
     <div class="container submenudirect">
       <header class="d-flex justify-content-py-5">
         <ul class="nav nav-pills">
-          <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/Pages/Menu.html" class="nav-link">Menu</a></li>
-          <li class="nav-item"><a href="/Pages/booking.html" class="nav-link">Bookings</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Events</a></li>
-          <li class="nav-item"><a href="/Pages/about.html" class="nav-link">About Us</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Terms of Use</a></li>
+          <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="Menu.html" class="nav-link">Menu</a></li>
+          <li class="nav-item"><a href="booking.html" class="nav-link">Bookings</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>               
         </ul>
       </header>
     </div>
