@@ -55,7 +55,7 @@
                   unset($_SESSION['error_message']);
                 }
                 ?>
-                <form method="POST" action="../../assets/php/create_staff.php">
+                <form method="POST" action="../../assets/php/Admin_Functions/create_staff.php">
                   <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="username" name="username" required>
