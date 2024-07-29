@@ -107,8 +107,8 @@
     <div class="container">
 
       <div class="section-title">
-        <h2>Contact</h2>
-        <p>The Gallery Café in Colombo offers a diverse menu of Italian, Sri Lankan, Chinese, and Korean cuisines. With a chic, contemporary ambiance, it's perfect for any occasion. Skilled chefs use the finest ingredients, and the restaurant offers an online reservation system for convenience.</p>
+        <h2 class="featurette-heading fw-normal lh-1 labeld">Contact<span class="text-body-secondary"> </span></h2>
+        <p>             The Gallery Café in Colombo offers a diverse menu of Italian, Sri Lankan, Chinese, and Korean cuisines. With a chic, contemporary ambiance, it's perfect for any occasion. Skilled chefs use the finest ingredients, and the restaurant offers an online reservation system for convenience.</p>
       </div>
 
       <div class="row">
@@ -187,32 +187,32 @@
 <div class="container-fluid">
 <div class="section-title">
 <h2>Some photos from <span>Our Restaurant</span></h2>
-<p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+<p>Memories of Gallery Cafe</p>
 </div>
 
 <div class="row g-0">
-<?php
-include '../assets/php/dbconnection.php';
-
-$sql = "SELECT image_path FROM gallery_images";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        echo '<div class="col-lg-3 col-md-4">
-                <div class="gallery-item">
-                  <a href="../assets/Photo/' . $row["image_path"] . '" class="gallery-lightbox">
-                    <img src="../assets/Photo/' . $row["image_path"] . '" alt="" class="img-fluid">
-                  </a>
-                </div>
-              </div>';
-    }
-} else {
-    echo "0 results";
-}
-
-$conn->close();
-?>
+  <?php
+  include '../assets/php/dbconnection.php';
+  
+  $sql = "SELECT image_path FROM gallery_images";
+  $result = $conn->query($sql);
+  
+  if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+          echo '<div class="col-lg-3 col-md-4">
+                  <div class="gallery-item">
+                    <a href="../assets/Photo/' . $row["image_path"] . '" class="gallery-lightbox">
+                      <img src="../assets/Photo/' . $row["image_path"] . '" alt="" class="img-fluid">
+                    </a>
+                  </div>
+                </div>';
+      }
+  } else {
+      echo "0 results";
+  }
+  
+  $conn->close();
+  ?>
 </div>
 </div>
 </section><!-- End Gallery Section -->
