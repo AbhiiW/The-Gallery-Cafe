@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'dbconnection.php';
+include '../dbconnection.php';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $row['password'])) {
             $_SESSION['success_message'] = "Login successful. Welcome, " . $row['name'] . "!";
             $_SESSION['login_success'] = true;
-            header("Location: ../../Pages/staffdashboard.html");
+            header("Location:../../../Pages/Dashboards/staffdashboard.html");
             exit();
         } else {
             $_SESSION['error_message'] = "Invalid password.";

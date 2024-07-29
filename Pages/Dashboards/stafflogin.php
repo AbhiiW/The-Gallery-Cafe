@@ -3,7 +3,7 @@
 <head>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Gallery Cafe | Staff Login </title>
@@ -15,7 +15,7 @@
       <div class="d-flex flex-wrap align-items-center justify-content-between">
         <div class="d-flex align-items-center">
           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="/assets/Photo/logonew.png" class="navlogo" alt="">
+            <img src="../../assets/Photo/logonew.png" class="navlogo" alt="">
           </a>
           <h1>The Gallery Cafe Staff Login</h1>
         </div>               
@@ -24,6 +24,7 @@
   </header>
 
   <!-- Login Form -->
+<div class="formst">
   <div class="container mt-5">
     <div class="row justify-content-center">
       <div class="col-md-6">
@@ -38,7 +39,7 @@
             session_start();
             if (isset($_SESSION['success_message'])) {
                 echo '<div class="alert alert-success">' . $_SESSION['success_message'] . '</div>';
-                echo '<input type="hidden" id="redirectUrl" value="../assets/php/staffdashboard.php">';
+                echo '<input type="hidden" id="redirectUrl" value="../../assets/php/Admin And Staff/stafflogin.php">';
                 unset($_SESSION['success_message']);
             }
             if (isset($_SESSION['error_message'])) {
@@ -46,7 +47,7 @@
                 unset($_SESSION['error_message']);
             }
             ?>
-            <form method="POST" action="../assets/php/staff_login.php">
+            <form method="POST" action="../../assets/php/Admin And Staff/stafflogin.php">
               <div class="mb-3">
                 <label for="staffUsername" class="form-label">Username</label>
                 <input type="text" class="form-control" id="staffUsername" name="username" required>
@@ -62,7 +63,7 @@
       </div>
     </div>
   </div>
-
+  </div>
 
   <!-- Footer -->
   <footer id="footer" class="footer dark-background mt-5">
