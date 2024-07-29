@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt->close();
     $conn->close();
-    header("Location: ../../Pages/admindashboard.php");
+    header("Location: ../../../Pages/Dashboards/admindashboard.php");
     exit();
 }
 ?>
