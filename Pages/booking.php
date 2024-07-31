@@ -28,7 +28,7 @@
             <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
               aria-label="Search">
           </form>
-          
+
         </div>
       </div>
     </div>
@@ -39,42 +39,55 @@
       <header class="d-flex justify-content-py-5">
         <ul class="nav nav-pills">
           <li class="nav-item"><a href="../Index2.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="Menu.html" class="nav-link">Menu</a></li>          
+          <li class="nav-item"><a href="Menu.html" class="nav-link">Menu</a></li>
           <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
-          <li class="nav-item"><a href="about.php" class="nav-link">About Us</a></li>        
+          <li class="nav-item"><a href="about.php" class="nav-link">About Us</a></li>
         </ul>
       </header>
     </div>
   </div>
 
   <!-- Hero Section -->
-<!-- Reservation Form -->
 
+<!-- Reservation Form -->
 <div class="bookingForm">
-<div id="reservationForm" class="container mt-5">
-  <h2>Make a Reservation</h2>
-  <form action="../assets/php/submit-reservation.php" method="POST">
+
+<?php
+session_start();
+
+if (isset($_SESSION['message'])) {
+    $messageType = $_SESSION['message_type'] === 'success' ? 'alert-success' : 'alert-danger';
+    echo '<div class="alert ' . $messageType . '">' . $_SESSION['message'] . '</div>';
+
+    unset($_SESSION['message']);
+    unset($_SESSION['message_type']);
+}
+?>
+  <div id="reservationForm" class="container mt-5">
+    <h2>Make a Reservation</h2>
+    <form action="../assets/php/submit-reservation.php" method="POST">
       <div class="mb-3">
-          <label for="customerName" class="form-label">Name</label>
-          <input type="text" class="form-control" id="customerName" name="customerName" required>
+        <label for="customerName" class="form-label">Name</label>
+        <input type="text" class="form-control" id="customerName" name="customerName" required>
       </div>
       <div class="mb-3">
-          <label for="customerEmail" class="form-label">Email</label>
-          <input type="email" class="form-control" id="customerEmail" name="customerEmail" required>
+        <label for="customerEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="customerEmail" name="customerEmail" required>
       </div>
       <div class="mb-3">
-          <label for="reservationDate" class="form-label">Date</label>
-          <input type="date" class="form-control" id="reservationDate" name="reservationDate" required>
+        <label for="reservationDate" class="form-label">Date</label>
+        <input type="date" class="form-control" id="reservationDate" name="reservationDate" required>
       </div>
       <div class="mb-3">
-          <label for="reservationTime" class="form-label">Time</label>
-          <input type="time" class="form-control" id="reservationTime" name="reservationTime" required>
+        <label for="reservationTime" class="form-label">Time</label>
+        <input type="time" class="form-control" id="reservationTime" name="reservationTime" required>
       </div>
       <button type="submit" class="btn btn-primary">Submit Reservation</button>
-  </form>
+    </form>
+  </div>
 </div>
-</div>
- 
+
+
 
         </div>
 

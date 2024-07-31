@@ -1,18 +1,31 @@
 
        
 function login() {
-     var username = document.getElementById("adminUsername").value;
-     var password = document.getElementById("adminPassword").value;
+    var username = document.getElementById("adminUsername").value;
+    var password = document.getElementById("adminPassword").value;
 
-     
-     var hardcodedUsername = "admin";
-     var hardcodedPassword = "password";
+    var Username = "admin";
+    var Password = "admin";
 
-     if (username === hardcodedUsername && password === hardcodedPassword) {
-         alert("Login successful!");
-         
-         window.location.href = "admindashboard.php";
-     } else {
-         alert("Invalid username or password.");
-     }
- }
+    
+    document.getElementById("success-alert").style.display = "none";
+    document.getElementById("error-alert").style.display = "none";
+
+    if (username === Username && password === Password) {
+        
+        document.getElementById("success-alert").style.display = "block";
+
+        
+        setTimeout(function() {
+            window.location.href = "admindashboard.php";
+        }, 5000);
+
+    } else {
+       
+        document.getElementById("error-alert").style.display = "block";
+    }
+
+    
+    return false;
+}
+
