@@ -24,10 +24,7 @@
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" id="search" role="search">
                     <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
                 </form>
-                <div class="text-end">
-                    <button type="button" class="btn btn-outline-light me-2">Login</button>
-                    <button type="button" class="btn btn-warning">Sign-up</button>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -116,7 +113,7 @@
 
                             </div>
                             <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid" alt="Sample image">
+                                <img src="../assets/photo/signupposter.png" class="img-fluid" alt="Sample image">
                             </div>
                         </div>
                     </div>

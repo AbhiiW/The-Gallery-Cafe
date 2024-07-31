@@ -29,10 +29,7 @@
             <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
               aria-label="Search">
           </form>
-          <div class="text-end">
-            <button type="button" class="btn btn-outline-light me-2">Login</button>
-            <button type="button" class="btn btn-warning">Sign-up</button>
-          </div>
+         
         </div>
       </div>
     </div>
@@ -42,7 +39,7 @@
     <div class="container submenudirect">
       <header class="d-flex justify-content-py-5">
         <ul class="nav nav-pills">
-          <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="../index2.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="Menu.html" class="nav-link">Menu</a></li>
           <li class="nav-item"><a href="booking.html" class="nav-link">Bookings</a></li>
           <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>               

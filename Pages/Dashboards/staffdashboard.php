@@ -24,52 +24,40 @@
 </header>
   
       
-      <!-- Main Content -->
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Reservations</h1>
-        </div>
-        <div class="table-responsive">
-          <table class="table table-striped table-sm">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>People</th>
-                <th>Message</th>
-                <th>Status</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Example  -->
-              <tr>
-                <td>John Doe</td>
-                <td>john@example.com</td>
-                <td>1234567890</td>
-                <td>2024-07-27</td>
-                <td>19:00</td>
-                <td>4</td>
-                <td>Looking forward to it!</td>
-                <td>Pending</td>
-                <td>
-                  <select class="form-select form-select-sm" aria-label="Update Status">
-                    <option selected>Pending</option>
-                    <option value="1">Confirmed</option>
-                    <option value="2">Cancelled</option>
-                  </select>
-                </td>
-              </tr>
-              <!-- End  -->
-            </tbody>
-          </table>
-        </div>
-      </main>
+     <!-- Dashboard -->
+  <div class="container my-5">
+    <h1 class="text-center">Staff Dashboard</h1>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Customer Name</th>
+            <th>Email</th>
+            <th>Reservation Date</th>
+            <th>Reservation Time</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+          <?php
+          include '../../assets/php/dbconnection.php';
+          $sql = "SELECT customer_name, customer_email, reservation_date, reservation_time FROM reservations";
+          $result = $conn->query($sql);
+
+          if ($result->num_rows > 0) {
+              while($row = $result->fetch_assoc()) {
+                  echo "<tr><td>" . $row["customer_name"]. "</td><td>" . $row["customer_email"]. "</td><td>" . $row["reservation_date"]. "</td><td>" . $row["reservation_time"]. "</td></tr>";
+              }
+          } else {
+              echo "<tr><td colspan='4' class='text-center'>No reservations found</td></tr>";
+          }
+          $conn->close();
+          ?>
+        </tbody>
+      </table>
     </div>
   </div>
+
 
    <!-- Footer -->
    <footer id="footer" class="footer dark-background">
