@@ -102,7 +102,7 @@
     <div class="container">
 
       <div class="section-title">
-        <h2 class="featurette-heading fw-normal lh-1 labeld">Contact<span class="text-body-secondary"> </span></h2>
+        <h2 class="featurette-heading fw-normal lh-1 labeld">Contact<span class="text-body-secondary"> </span></h2><br><br><br><br>
         <p>             The Gallery Café in Colombo offers a diverse menu of Italian, Sri Lankan, Chinese, and Korean cuisines. With a chic, contemporary ambiance, it's perfect for any occasion. Skilled chefs use the finest ingredients, and the restaurant offers an online reservation system for convenience.</p>
       </div>
 
